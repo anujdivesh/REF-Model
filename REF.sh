@@ -16,8 +16,11 @@ curl -u "TOKEN:${API_KEY}" https://riskscape.nz/api/ping
 curl -s "${TRACK_URL}" > cyclone-latest.geojson
 
 # extract from cyclone-latest.geojson
-CYCLONE_NAME=$(jq -r .cyclone_name cyclone-latest.geojson)
-ISSUE_TIME=$(jq -r .issued_time cyclone-latest.geojson)
+#CYCLONE_NAME=$(jq -r .cyclone_name cyclone-latest.geojson)
+#ISSUE_TIME=$(jq -r .issued_time cyclone-latest.geojson)
+CYCLONE_NAME=$(sed -n 's/.*"cyclone_name":"\([^"]*\)".*/\1/p' cyclone-latest.geojson)
+ISSUE_TIME=$(sed -n 's/.*"issued_time":"\([^"]*\)".*/\1/p' cyclone-latest.geojson)
+
 RUN_NAME="${CYCLONE_NAME} issued ${ISSUE_TIME}"
 
 echo "Cyclone: ${CYCLONE_NAME}, issued: ${ISSUE_TIME}"
