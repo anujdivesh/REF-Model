@@ -1,0 +1,5 @@
+﻿WindSpeed,Danger,Country,Buildings,Residential_Buildings,Nonresidential_Buildings,Building_Value,Population,Road_km,Road_Value,Crop_Value,Infrastructure_Value,Evacuation_Centres,Health_Facilties,Schools
+,Track Uncertainty,Cook Islands,185,37,148,6160762,148,12.71,496617,82940,0,0,0,2
+,Not exposed,Cook Islands,17573,10574,6999,1375166126,14793,597.68,116126093,8745777,72495957,42,9,27
+34.0,Possible Gale Winds,Cook Islands,1,0,1,5111,0,0.0,0,0,0,0,0,0
+64.0,Hurricane Winds,Cook Islands,787,61,726,29580981,338,20.22,1659433,381524,1605816,2,0,3
