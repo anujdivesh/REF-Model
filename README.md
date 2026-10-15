@@ -2,8 +2,6 @@
 
 Runs the REF model on RiskScape for a cyclone track from the SPC API, waits for it to finish and downloads the outputs.
 
-Needs `curl` and `jq` (`brew install jq`).
-
 ## Setup
 
 Edit the top of `REF.sh`:
