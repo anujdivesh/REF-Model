@@ -13,7 +13,7 @@ Edit the top of `REF.sh`:
 List track ids:
 
 ```bash
-curl -s 'https://pacific-disaster-api.spc.int/partner_api/v1/cyclone_track/?format=json' | jq '.[] | {id, cyclone_name}'
+curl -s 'https://pacific-disaster-api.spc.int/partner_api/v1/cyclone_track/?format=json'
 ```
 
 ## Run
