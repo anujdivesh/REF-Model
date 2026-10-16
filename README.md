@@ -4,9 +4,14 @@ Runs the REF model on RiskScape for a cyclone track from the SPC API, waits for 
 
 ## Setup
 
-Edit the top of `REF.sh`:
+Put your RiskScape API key in `.env`:
 
-- `API_KEY` - RiskScape API key
+```bash
+cp .env.example .env
+```
+
+Then edit the top of `REF.sh`:
+
 - `TRACK_ID` - SPC cyclone track id
 - `DOWNLOAD_OUTPUTS` - `true` / `false`
 

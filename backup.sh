@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+# API_KEY is read from .env (not committed), see .env.example
+cd "$(dirname "$0")"
+if [ ! -f .env ]; then
+  echo "Missing .env - copy .env.example to .env and add your API key"
+  exit 1
+fi
+source .env
+
 PROJECT_SLUG=niwa/partner/rsmc-tcwc
 MODEL_NAME=Rapid-Exposure-Forecast-GeoJSON
 
@@ -16,8 +24,8 @@ curl -u "TOKEN:${API_KEY}" https://riskscape.nz/api/ping
 
 # Post it with managed: true
 curl --location 'https://riskscape.nz/api/projects/by-full-slug/niwa/partner/rsmc-tcwc/runs/new' \
+-u "TOKEN:${API_KEY}" \
 --header 'Content-Type: application/json' \
---header 'Authorization: Basic VE9LRU46MTJ1T1JOT1c3TGs4QXFwaFRFV01zQT09' \
 --data '{
     "externalModelId" : "Rapid-Exposure-Forecast-GeoJSON",
     "managed": true,

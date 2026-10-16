@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# API_KEY is read from .env (not committed), see .env.example
+cd "$(dirname "$0")"
+if [ ! -f .env ]; then
+  echo "Missing .env - copy .env.example to .env and add your API key"
+  exit 1
+fi
+source .env
 
 PROJECT_SLUG=niwa/partner/rsmc-tcwc
 MODEL_NAME=Rapid-Exposure-Forecast-GeoJSON
