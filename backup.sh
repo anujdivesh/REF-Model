@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-API_KEY=12uORNOW7Lk8AqphTEWMsA==
 PROJECT_SLUG=niwa/partner/rsmc-tcwc
 MODEL_NAME=Rapid-Exposure-Forecast-GeoJSON
 
