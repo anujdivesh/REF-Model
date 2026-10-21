@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# use the macOS curl: it trusts certificates in the system keychain (incl. the
+# Zscaler proxy); conda's curl uses its own CA bundle and fails with error 60
+PATH="/usr/bin:${PATH}"
+
 # API_KEY is read from .env (not committed), see .env.example
 cd "$(dirname "$0")"
 if [ ! -f .env ]; then
@@ -10,7 +14,7 @@ source .env
 
 PROJECT_SLUG=niwa/partner/rsmc-tcwc
 MODEL_NAME=Rapid-Exposure-Forecast-GeoJSON
-TRACK_ID=74
+TRACK_ID=215
 TRACK_URL="https://pacific-disaster-api.spc.int/partner_api/v1/cyclone_track/${TRACK_ID}/?format=json"
 DOWNLOAD_OUTPUTS=true   # download the run's outputs when it finishes (true/false)
 OUTPUT_DIR=outputs      # outputs go in ${OUTPUT_DIR}/<cyclone name>_<issue time>/
