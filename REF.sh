@@ -13,7 +13,7 @@ fi
 source .env
 
 PROJECT_SLUG=niwa/partner/rsmc-tcwc
-MODEL_NAME=Rapid-Exposure-Forecast-GeoJSON
+MODEL_NAME=Rapid-Exposure-Forecast
 TRACK_ID=215
 TRACK_URL="https://pacific-disaster-api.spc.int/partner_api/v1/cyclone_track/${TRACK_ID}/?format=json"
 DOWNLOAD_OUTPUTS=true   # download the run's outputs when it finishes (true/false)
@@ -54,6 +54,10 @@ curl -s -u "TOKEN:${API_KEY}" \
         \"hazard\": {
             \"label\": \"TC track\",
             \"value\": \"${TRACK_URL}\"
+        },
+        \"track_source\": {
+            \"label\": \"Track source\",
+            \"value\": \"'FMS-Track-GeoJSON'\"
         }
     }
 }" > model_run_response.txt
